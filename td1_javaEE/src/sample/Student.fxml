@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.collections.FXCollections?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
 <?import java.lang.String?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
-
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
@@ -18,7 +18,7 @@
       <TextArea fx:id="scomments" layoutX="318.0" layoutY="50.0" prefHeight="170.0" prefWidth="170.0" text="comment :" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
       <TextField fx:id="sname" layoutX="125.0" layoutY="316.0" text="name : " AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="200.0" />
       <TextField fx:id="smark" layoutX="351.0" layoutY="275.0" text="mark : " AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="200.0" />
-      <ImageView fx:id="simage" fitHeight="130.0" fitWidth="130.0" layoutX="25.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="240.0" />
+      <ImageView fx:id="simage" fitHeight="130.0" fitWidth="130.0" layoutX="25.0" layoutY="227.0" onMouseClicked="#chooseImage" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="240.0" />
       <ComboBox fx:id="sgender" layoutX="100" layoutY="100" prefWidth="150.0" promptText="gender :" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="280.0">
          <items>
             <FXCollections fx:factory="observableArrayList">
@@ -26,6 +26,9 @@
             </FXCollections>
          </items>
       </ComboBox>
+      <Label fx:id="ImagePath" disable="true" layoutX="25.0" layoutY="227.0" onMouseClicked="#chooseImage" prefHeight="17.0" prefWidth="44.0" visible="false" AnchorPane.leftAnchor="490.0" AnchorPane.topAnchor="178.0" />
       <DatePicker fx:id="sdate" layoutX="144.0" layoutY="73.0" prefHeight="20.0" prefWidth="150.0" promptText="date of birth : " AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="280.0" />
+       <Button fx:id="sadd" layoutX="50.0" layoutY="320.0" mnemonicParsing="false" onAction="#onSave" text="add" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="320.0" />
+       <Button fx:id="sdelete" layoutX="50.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleDeletePerson" text="delete" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="360.0" />
    </children>
 </AnchorPane>

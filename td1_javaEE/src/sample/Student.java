@@ -44,11 +44,11 @@ public class Student {
         this.URL = URL;
     }
 
-    public String getMark() {
+    public Double getMark() {
         return Mark;
     }
 
-    public void setMark(String mark) {
+    public void setMark(double mark) {
         Mark = mark;
     }
 
@@ -60,7 +60,12 @@ public class Student {
         Comment = comment;
     }
 
-    public Student(int id, String name, String gender, LocalDate birth_date, String URL, String mark, String comment) {
+    @Override
+    public String toString(){
+        return("[" + id + "] " + name + "-" + gender + "(" + birth_date + ") image : " + URL);
+    }
+
+    public Student(int id, String name, String gender, LocalDate birth_date, String URL, double mark, String comment) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -75,12 +80,16 @@ public class Student {
         this.gender = gender;
     }
 
+    public Student(){
+
+    }
+
     private int id;
     private String name;
     private String gender;
     private LocalDate birth_date;
     private String URL;
-    private String Mark;
+    private double Mark;
     private String Comment;
 
 
